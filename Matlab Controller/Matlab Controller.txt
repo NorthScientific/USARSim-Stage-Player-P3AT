@@ -1,0 +1,14 @@
+Connection2UT = tcpip('localhost',3000)
+
+set(Connection2UT, 'Terminator',{'CR/LF','CR/LF'});
+
+fopen(Connection2UT);
+
+fscanf(Connection2UT);
+or
+ConStat = get(Connection2UT, 'Status');
+
+fprintf(Connection2UT, 'INIT {ClassName USARBot.bot_Type}{Location 0, -50, 020}{Name bot_Name}');
+
+
+

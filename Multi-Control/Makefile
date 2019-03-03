@@ -1,0 +1,17 @@
+# Example makefile for Player client programs
+#
+# NOTE:  Be sure you have LD_LIBRARY_PATH defined, to include /usr/local/lib
+#        (typically, this goes in your .cshrc file (or appropriate variant
+#        for the shell you are using) as "setenv LD_LIBRARY_PATH /usr/local/lib")
+
+PLAYERDIR = /usr/local
+
+CXX = g++
+INCLUDES = -I$(PLAYERDIR)/include/player-3.0/ -I/usr/local/include/boost/
+CFLAGS = -Wall -g $(INCLUDES)
+
+laserobstacleavoid:   
+	$(CXX) $(CFLAGS) -o Multi `pkg-config --cflags playerc++` Multi.cc `pkg-config --libs playerc++`
+
+clean:
+	rm -f a.out core Multi *.o
